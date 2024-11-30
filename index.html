@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>迷宫探险</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>迷宫探险</h1>
+            <div class="level-info">
+                <div class="level-number">第 <span id="currentLevel">1</span> 关</div>
+                <div id="levelStatus" class="level-status"></div>
+            </div>
+            <div class="game-instructions">
+                <p class="subtitle">使用方向键移动，找到通往终点的路</p>
+                <div class="mechanics">
+                    <div class="mechanic">
+                        <canvas class="mechanic-icon" id="portalIcon" width="30" height="30"></canvas>
+                        传送门：进入后传送到对应颜色的出口
+                    </div>
+                    <div class="mechanic">
+                        <canvas class="mechanic-icon" id="switchIcon" width="30" height="30"></canvas>
+                        开关：触碰后可能会改变迷宫结构
+                    </div>
+                    <div class="mechanic">
+                        <canvas class="mechanic-icon" id="obstacleIcon" width="30" height="30"></canvas>
+                        动态障碍：注意避开移动的障碍物
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="mazeCanvas"></canvas>
+        </div>
+        <div class="controls">
+            <button onclick="generateNewMaze()" class="new-game-btn">
+                <span class="btn-text">重新开始</span>
+            </button>
+        </div>
+    </div>
+    <script src="maze.js"></script>
+</body>
+</html>
